@@ -1,0 +1,108 @@
+from __future__ import annotations
+
+# Compatibility facade: API and clients keep importing from lacedaemon.ledger,
+# while implementation lives in focused domain modules.
+
+from .economy.accounts import (
+    account_for_dragons,
+    balance_payload,
+    claim_login_reward,
+    credit_dragons,
+    debit_dragons,
+    dragon_balance,
+    ensure_balance_row,
+    generate_link_code,
+    give_dragons,
+    idempotent_credit_dragons,
+    item_account_for_order_owner,
+    linked_mc_for_account,
+    locked_dragons,
+    migrate_dragons_to_discord,
+    migrate_items_to_minecraft,
+    order_owner,
+    order_owner_keys,
+    verify_link,
+)
+from .economy.arena import (
+    arena_cancel,
+    arena_commit,
+    arena_forcestart,
+    arena_resolve,
+    arena_spread,
+    arena_status,
+    list_arena_autospreads,
+    run_arena_autospreads,
+    set_arena_autospread,
+    set_arena_autospread_games,
+)
+from .economy.common import LedgerError, OrderFill, emit, item_atoms, now, pop_events, require_non_negative, require_positive
+from .economy.daemon import (
+    add_daemon,
+    cancel_daemon_order,
+    daemon_balance,
+    daemon_market,
+    daemon_orders,
+    daemon_send,
+    daemon_stats,
+    distribute_integer,
+    match_daemon_orders,
+    place_daemon_order,
+    record_daemon_mint,
+    update_or_delete_daemon_order,
+)
+from .economy.features import (
+    channel_feature_enabled,
+    collect_reward,
+    collect_role_rewards,
+    get_setting,
+    list_channel_features,
+    normalize_channel_feature,
+    roulette_timer,
+    set_channel_feature,
+    set_collect_role_reward,
+    set_roulette_timer,
+    set_setting,
+    settle_gambling,
+)
+from .economy.governance import create_proposal, list_proposals, proposal_result, vote_proposal
+from .economy.items import (
+    _legacy_atoms_column,
+    _legacy_column,
+    commodity_balances,
+    commodity_deposit,
+    commodity_withdraw,
+    credit_item,
+    credit_item_atoms,
+    debit_item,
+    debit_item_atoms,
+    give_item,
+    inventory,
+    item_balance,
+    item_balance_atoms,
+    item_leaderboard,
+)
+from .economy.market import (
+    cancel_all_orders,
+    cancel_order,
+    dragon_leaderboard,
+    list_orders,
+    list_user_orders,
+    market,
+    match_orders,
+    place_order,
+    refund_order,
+    update_or_delete_order,
+)
+from .economy.world import (
+    alive_death,
+    alive_leaderboard,
+    alive_report,
+    bounties,
+    bounty_claim,
+    bounty_place,
+    create_purchase_list,
+    delete_purchase_list,
+    fill_purchase_list,
+    list_purchase_lists,
+    parse_purchase_items,
+)

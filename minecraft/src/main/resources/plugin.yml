@@ -1,0 +1,35 @@
+name: LacedaemonEconomy
+version: 2.0.0
+main: com.lacedaemon.economy.LacedaemonEconomyPlugin
+api-version: '1.21'
+
+commands:
+  discord:
+    description: Get a Discord account-link code
+    usage: /discord
+  deposit:
+    description: Deposit items or XP into your Economy++ vault
+    usage: /deposit <item> <amount|all> or /deposit inv
+  withdraw:
+    description: Withdraw items or XP from your Economy++ vault
+    usage: /withdraw <item> <amount> [variant]
+  balance:
+    description: View your vault balance
+    usage: /balance
+  itemgui:
+    description: Open a simple item balance view
+    usage: /itemgui <item>
+    aliases: [itembalance]
+  alive:
+    description: Show the Minecraft-days-alive leaderboard
+    usage: /alive [page]
+  bounty:
+    description: Place a dragon bounty on a player
+    usage: /bounty <player> <dragons>
+    aliases: [bouny]
+  bounties:
+    description: Show active dragon bounties
+    usage: /bounties [page]
+  helpmc:
+    description: Show deposit and withdraw item help
+    usage: /helpmc [category]
